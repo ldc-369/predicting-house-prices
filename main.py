@@ -18,7 +18,7 @@ def prepare_input(longitude, latitude, housing_median_age, total_rooms, total_be
     # encode
     ocp_encoded = ocp_encoder.transform(np.array([[ocean_proximity.lower()]])) # array(1, 5)
 
-    X_remain = np.array([[longitude,latitude,housing_median_age,total_rooms,total_bedrooms,population,households,median_income]]) # array(1, 8)
+    X_remain = np.array([[longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income]]) # array(1, 8)
     X_predict = np.concatenate((X_remain, ocp_encoded), axis=1)  # array(1, 13)
 
     # scale
