@@ -36,14 +36,11 @@ def prepare_input(input):
         
         #concatenate
         X_predict = np.concatenate((X_predict, np.concatenate((X_remain, ocp_encoded), axis=1)), axis=0)  # array(-1, 13)
-
+       
     return X_predict
 
-def predict(input):
-    X_predict = prepare_input(input)
-    print(X_predict)
+def predict(X_predict):
     Y_predict = model.predict(X_predict)
-
     return Y_scaler.inverse_transform(Y_predict)
 
 input = [
@@ -85,5 +82,7 @@ input = [
     }
 ]
 
-Y_predict = predict(input)
+X_predict = prepare_input(input)
+print(X_predict)
+Y_predict = predict(X_predict)
 print(f"Predicted median_house_value: {Y_predict}")
