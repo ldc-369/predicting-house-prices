@@ -83,6 +83,5 @@ input = [
 ]
 
 X_predict = prepare_input(input)
-print(X_predict)
 Y_predict = predict(X_predict)
 print(f"Predicted median_house_value: {Y_predict}")
