@@ -35,7 +35,7 @@ def prepare_input(input):
         X_remain = X_scaler.transform(X_remain)
         
         #concatenate
-        X_predict = np.concatenate((X_predict, np.concatenate((X_remain, ocp_encoded), axis=1)), axis=0)  # array(-1, 13)
+        X_predict = np.concatenate((X_predict, np.concatenate((X_remain, ocp_encoded), axis=1)), axis=0)[1:]  # array(-1, 13)
        
     return X_predict
 
